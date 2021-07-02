@@ -2,9 +2,9 @@
   "name": "jsdoc-to-readme",
   "version": "1.0.0",
   "description": "Simple node cli tool to inject jsdoc result into README.md files",
-  "main": "index.mjs",
+  "main": "index.js",
   "bin": {
-    "jsdoc-to-readme": "index.mjs"
+    "jsdoc-to-readme": "index.js"
   },
   "scripts": {
     "test": "node . --src test/input.js --output test/OUTPUT.md"
