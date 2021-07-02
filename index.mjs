@@ -1,7 +1,8 @@
-const jsdoc2md = require('jsdoc-to-markdown');
-const commandLineArgs = require('command-line-args');
-const fs = require('fs');
-const path = require('path');
+#!/usr/bin/env node
+import jsdoc2md from 'jsdoc-to-markdown';
+import commandLineArgs from 'command-line-args';
+import fs from 'fs';
+import path from 'path';
 
 const optionDefinitions = [
   { name: 'src', type: String, multiple: true, defaultOption: true },
