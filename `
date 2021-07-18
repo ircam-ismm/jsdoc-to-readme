@@ -1,0 +1,37 @@
+pick 202bf01 improved README
+pick 6c68c27 improved README
+pick 7c854b6 improved README
+pick df94f22 improved README
+pick 9a9696f improved README
+pick ca52f8e improved README
+pick 50132f8 improved README
+pick e4ac60a improved README
+pick 74f45ac improved README
+pick 988378e improved README
+pick 53a6c1b improved README
+pick 146da31 improved README
+
+# Rebase 3c4b53a..146da31 onto 3c4b53a (12 commands)
+#
+# Commands:
+# p, pick <commit> = use commit
+# r, reword <commit> = use commit, but edit the commit message
+# e, edit <commit> = use commit, but stop for amending
+# s, squash <commit> = use commit, but meld into previous commit
+# f, fixup <commit> = like "squash", but discard this commit's log message
+# x, exec <command> = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop <commit> = remove commit
+# l, label <label> = label current HEAD with a name
+# t, reset <label> = reset HEAD to a label
+# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified). Use -c <commit> to reword the commit message.
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
