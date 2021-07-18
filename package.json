@@ -1,6 +1,6 @@
 {
   "name": "jsdoc-to-readme",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple node cli tool to inject jsdoc result into README.md files",
   "main": "index.mjs",
   "repository": {
