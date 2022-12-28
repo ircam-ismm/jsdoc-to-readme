@@ -24,6 +24,8 @@ Usage: jsdoc-to-readme [options]
 
     --heading-depth:    The title level of the generated documentation 
                         (defaults to 3)
+
+    --tag:              The tag to be used, default to 'api'
 ```
 
 ## Example Use

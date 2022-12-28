@@ -7,13 +7,15 @@ import path from 'path';
 const optionDefinitions = [
   { name: 'src', type: String, multiple: true, defaultOption: true },
   { name: 'output', alias: 'o', type: String },
-  { name: 'heading-depth', alias: 'd', type: Number }
-]
+  { name: 'heading-depth', alias: 'd', type: Number },
+  { name: 'tag', alias: 't', type: String },
+];
 
 const options = Object.assign({
   src: [],
   output: 'README.md',
   'heading-depth': 3,
+  tag: 'api',
 }, commandLineArgs(optionDefinitions));
 
 if (options.src.length === 0) {
@@ -29,7 +31,7 @@ const templateData = jsdoc2md.getTemplateDataSync({ files });
 
 const readme = fs.readFileSync(mdFile).toString();
 
-const tag = 'api';
+const tag = options.tag;
 const hasTagEnd = readme.search(new RegExp(`<!--[ \t]*${tag}stop[ \t]-->`, 'm')) !== -1;
 
 let find;
