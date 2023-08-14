@@ -1,10 +1,10 @@
-# `jsdoc-to-readme`
+# jsdoc-to-readme
 
-> Simple cli tool to inject jsdoc result into README.md files
- 
-The tools is a simple wrapper around the [jsdoc-to-markdown](https://www.npmjs.com/package/jsdoc-to-markdown) package, to inject directly JSDoc markdown output into the a markdown file (generally the `README.md`) on the model proposed by [markdown-toc](https://www.npmjs.com/package/markdown-toc). 
+Simple cli tool to inject jsdoc result into README.md files.
 
-The tools looks for a `<!-- api -->` tag in the README and inject the `jsdoc-to-markdown` result at this location. Usefull for small libraries where creating a full API website is cumbersome.
+The tools looks for a `<!-- api -->` tag in the README and inject generated JSDoc markdown at this location. Usefull for small libraries where creating a full API website is cumbersome.
+
+The tool is a simple wrapper around the [documentation.js](https://www.npmjs.com/package/documentation) package, using the same idea as the [markdown-toc](https://www.npmjs.com/package/markdown-toc) package. 
 
 ## Install
 
@@ -30,7 +30,7 @@ Usage: jsdoc-to-readme [options]
 
 ## Example Use
 
-The tool has been developped to play well with [markdown-toc](https://www.npmjs.com/package/markdown-toc). To simply create README files that contain both a table of content and API documentation. You can see an example of `README.md` created using these tools at [https://github.com/ircam-ismm/sync](https://github.com/ircam-ismm/sync) or [https://github.com/ircam-ismm/node-libpd](https://github.com/ircam-ismm/node-libpd)
+The tool has been developped to play well with [markdown-toc](https://www.npmjs.com/package/markdown-toc). To simply create README files that contain both a table of content and API documentation.
 
 #### 1. Install deps
 

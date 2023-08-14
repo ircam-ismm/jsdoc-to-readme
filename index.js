@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-// import jsdoc2md from 'jsdoc-to-markdown';
 import * as documentation from 'documentation';
 import commandLineArgs from 'command-line-args';
 import fs from 'fs';
@@ -24,14 +23,15 @@ if (options.src.length === 0) {
   console.log('[jsdoc-to-readme] no source provided')
 }
 
-// input and output paths
-const files = options.src;
-const mdFile = options.output;
+const build = await documentation.build(options.src, {
+  markdownToc: true,
+  markdownTocMaxDepth: options['heading-depth'],
+})
 
-// get template data
+const md = await documentation.formats.md(build);
 
-const readme = fs.readFileSync(mdFile).toString();
 
+const readme = fs.readFileSync(options.output).toString();
 const tag = options.tag;
 const hasTagEnd = readme.search(new RegExp(`<!--[ \t]*${tag}stop[ \t]-->`, 'm')) !== -1;
 
@@ -41,23 +41,6 @@ if (hasTagEnd) {
 } else {
   find = new RegExp(`<!--[ \t]*${tag}[ \t]-->`, 'm');
 }
-// console.log(jsdoc2md);
-const build = await documentation.build(files, {
-  markdownToc: true,
-  markdownTocMaxDepth: options['heading-depth'],
-})
-const md = await documentation.formats.md(build);
-
-// console.log(md)
-
-// const templateData = jsdoc2md.getTemplateDataSync({ files });
-// jsdoc2md.renderSync({
-//   data: templateData,
-//   template: '{{>main}}',
-//   'heading-depth': options['heading-depth'],
-//   // partial: 'partials/*.hbs',
-//   // helper: 'helper/toLowerCase.cjs',
-// })
 
 const templateDataFormatted = `<!-- ${tag} -->
 ${md}
