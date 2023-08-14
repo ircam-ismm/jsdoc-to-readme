@@ -13,21 +13,25 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 <!-- api -->
 
-<a name="Test"></a>
+<a name="module_Test"></a>
 
 ### Test
+
+* [Test](#module_Test)
+    * [Test](#exp_module_Test--Test) ⏏
+        * [new Test(options)](#new_module_Test--Test_new)
+        * [.sayHello(str)](#module_Test--Test+sayHello)
+        * [.sayHello2(str)](#module_Test--Test+sayHello2) ⇒ <code>Promise</code>
+
+<a name="exp_module_Test--Test"></a>
+
+#### Test ⏏
 A test class
 
-**Kind**: global class  
+**Kind**: Exported class  
+<a name="new_module_Test--Test_new"></a>
 
-* [Test](#Test)
-    * [new Test(options)](#new_Test_new)
-    * [.sayHello(str)](#Test+sayHello)
-    * [.sayHello2(str)](#Test+sayHello2)
-
-<a name="new_Test_new"></a>
-
-#### new Test(options)
+##### new Test(options)
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -39,23 +43,23 @@ A test class
 import Test from 'test';
 const test = new Test({ a: true });
 ```
-<a name="Test+sayHello"></a>
+<a name="module_Test--Test+sayHello"></a>
 
-#### test.sayHello(str)
+##### test.sayHello(str)
 Say hello method
 
-**Kind**: instance method of [<code>Test</code>](#Test)  
+**Kind**: instance method of [<code>Test</code>](#exp_module_Test--Test)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | str | <code>String</code> | The string to say. |
 
-<a name="Test+sayHello2"></a>
+<a name="module_Test--Test+sayHello2"></a>
 
-#### test.sayHello2(str)
+##### test.sayHello2(str) ⇒ <code>Promise</code>
 Say hello alternative method
 
-**Kind**: instance method of [<code>Test</code>](#Test)  
+**Kind**: instance method of [<code>Test</code>](#exp_module_Test--Test)  
 
 | Param | Type | Description |
 | --- | --- | --- |

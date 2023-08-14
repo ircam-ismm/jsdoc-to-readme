@@ -1,6 +1,10 @@
 /**
+ * @module Test
+ */
+/**
  * A test class
  *
+ * @alias module:Test
  * @example
  * import Test from 'test';
  * const test = new Test({ a: true });
@@ -24,6 +28,7 @@ class Test {
   /**
    * Say hello alternative method
    * @param {String} str - The string to say.
+   * @return {Promise}
    */
   sayHello2(str) {
 
