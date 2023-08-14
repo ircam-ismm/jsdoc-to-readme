@@ -2,7 +2,8 @@
   "name": "jsdoc-to-readme",
   "version": "1.1.0",
   "description": "Simple node cli tool to inject jsdoc result into README.md files",
-  "main": "index.mjs",
+  "main": "index.js",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/ircam-ismm/jsdoc-to-readme"
@@ -20,6 +21,7 @@
   "license": "BSD-3-Clause",
   "dependencies": {
     "command-line-args": "^5.1.1",
+    "documentation": "^14.0.2",
     "jsdoc-to-markdown": "^7.0.1"
   }
 }

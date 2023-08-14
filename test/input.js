@@ -1,10 +1,6 @@
 /**
- * @module Test
- */
-/**
  * A test class
  *
- * @alias module:Test
  * @example
  * import Test from 'test';
  * const test = new Test({ a: true });

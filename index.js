@@ -1,5 +1,7 @@
 #!/usr/bin/env node
-import jsdoc2md from 'jsdoc-to-markdown';
+
+// import jsdoc2md from 'jsdoc-to-markdown';
+import * as documentation from 'documentation';
 import commandLineArgs from 'command-line-args';
 import fs from 'fs';
 import path from 'path';
@@ -27,7 +29,6 @@ const files = options.src;
 const mdFile = options.output;
 
 // get template data
-const templateData = jsdoc2md.getTemplateDataSync({ files });
 
 const readme = fs.readFileSync(mdFile).toString();
 
@@ -40,14 +41,26 @@ if (hasTagEnd) {
 } else {
   find = new RegExp(`<!--[ \t]*${tag}[ \t]-->`, 'm');
 }
+// console.log(jsdoc2md);
+const build = await documentation.build(files, {
+  markdownToc: true,
+  markdownTocMaxDepth: options['heading-depth'],
+})
+const md = await documentation.formats.md(build);
+
+// console.log(md)
+
+// const templateData = jsdoc2md.getTemplateDataSync({ files });
+// jsdoc2md.renderSync({
+//   data: templateData,
+//   template: '{{>main}}',
+//   'heading-depth': options['heading-depth'],
+//   // partial: 'partials/*.hbs',
+//   // helper: 'helper/toLowerCase.cjs',
+// })
 
 const templateDataFormatted = `<!-- ${tag} -->
-
-${jsdoc2md.renderSync({
-  data: templateData,
-  template: '{{>main}}',
-  'heading-depth': options['heading-depth'],
-})}
+${md}
 <!-- ${tag}stop -->`;
 
 const readmeWithAPI = readme.replace(find, templateDataFormatted);
