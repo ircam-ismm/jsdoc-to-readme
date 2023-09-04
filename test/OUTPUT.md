@@ -24,7 +24,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ## Test
 
-A test class coucou
+A test class
 
 ### Parameters
 

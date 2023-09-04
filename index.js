@@ -29,11 +29,10 @@ const build = await documentation.build(options.src, {
 })
 
 const md = await documentation.formats.md(build);
+const output = fs.readFileSync(options.output).toString();
 
-
-const readme = fs.readFileSync(options.output).toString();
 const tag = options.tag;
-const hasTagEnd = readme.search(new RegExp(`<!--[ \t]*${tag}stop[ \t]-->`, 'm')) !== -1;
+const hasTagEnd = output.search(new RegExp(`<!--[ \t]*${tag}stop[ \t]-->`, 'm')) !== -1;
 
 let find;
 if (hasTagEnd) {
@@ -46,6 +45,6 @@ const templateDataFormatted = `<!-- ${tag} -->
 ${md}
 <!-- ${tag}stop -->`;
 
-const readmeWithAPI = readme.replace(find, templateDataFormatted);
+const readmeWithAPI = output.replace(find, templateDataFormatted);
 
-fs.writeFileSync(mdFile, readmeWithAPI);
+fs.writeFileSync(options.output, readmeWithAPI);
