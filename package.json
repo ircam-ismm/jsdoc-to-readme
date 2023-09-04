@@ -12,7 +12,7 @@
     "access": "public"
   },
   "bin": {
-    "jsdoc-to-readme": "index.mjs"
+    "jsdoc-to-readme": "index.js"
   },
   "scripts": {
     "test": "node . --src test/input.js --output test/OUTPUT.md"
